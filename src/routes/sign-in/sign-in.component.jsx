@@ -1,6 +1,8 @@
 import { Fragment } from "react"
 import { signInWithGooglePopup, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 
+import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
+
 const SignIn = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -18,19 +20,13 @@ const SignIn = () => {
    
     
     return (
-        <Fragment>
+        
             <div className="sign-in">
-                <h1>Sign in with Google</h1>
-                <form onSubmit={handleSubmit}>
-                <label>user</label>
-                <input required autoComplete="false" type='text' name="user" palceholder="type login"/>
-                <label>password</label>
-                <input required autoComplete="false" type='password' name="password" palceholder="type password"/>
-                <button type="submit">Sign In</button>
-                </form>
-                <button type="button" onClick={logGoogleUsers}>Sign In With Google</button>
+                <h1>Sign in page</h1>
+                <button onClick={logGoogleUsers}>Sign In With Google Popup</button>
+                <SignUpForm />
             </div>
-        </Fragment>
+        
     )
 }
 
